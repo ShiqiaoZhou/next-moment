@@ -1,0 +1,18 @@
+{
+  "name": "next-moment",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Draw the future. See what happens next.",
+  "homepage": "https://shiqiaozhou.github.io/apps/next-moment/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ShiqiaoZhou/next-moment.git"
+  },
+  "scripts": {
+    "build": "node scripts/build.cjs",
+    "test": "node tests/engine.cjs && node tests/lesson-data.cjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

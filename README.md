@@ -1,12 +1,12 @@
 # Next Moment
 
-**Draw the future. See what happens next.**
+**Will tomorrow repeat?**
 
-A small browser playground for your forecasting intuition. Look at 48 hours of energy use, draw the next 24 hours, and reveal how you compare with three simple forecasts.
+Two days of household energy use. Use the pattern to draw day three. Reveal the next 24 hours and see how close you came.
 
 [Play Next Moment](https://shiqiaozhou.github.io/apps/next-moment/) · [GitHub](https://github.com/ShiqiaoZhou/next-moment)
 
-![Next Moment: a hand-drawn forecast meets an energy curve](assets/next-moment.svg)
+![Twenty-four green columns rise and fall. One pale column steps forward.](assets/interval.webp)
 
 ## Play
 
@@ -19,7 +19,7 @@ English opens by default, with a Chinese switch. Drawings stay in your browser; 
 
 ## Run locally
 
-Open `index.html` directly in a modern browser. Everything needed to play is inside this file; no installation or network access is required.
+Download `index.html` and open it directly in a modern browser. The cover and game are both inside this one file, so you can play offline.
 
 To edit and rebuild, use Node.js 18 or newer:
 
@@ -28,13 +28,15 @@ npm run build
 npm test
 ```
 
-There are no package dependencies and no `npm install` step. The build embeds `src/` into the root `index.html`. Commit the rebuilt file when changing source. The optional Back to Vibe navigation targets the personal website's `/vibe-projects/next-moment/` route and is hidden when opened as a local file.
+The build uses Node.js without additional dependencies. It embeds the cover, styles, scripts and data into `index.html`. Commit the rebuilt file when changing source.
 
 ## Source
 
 | Path | Purpose |
 | --- | --- |
 | `src/page-template.html` | Layout, styles, drawing interactions, and reveal flow |
+| `src/interval.css` | Interval typography, colours and responsive layout |
+| `assets/interval.webp` | Cover artwork |
 | `src/forecast-engine.js` | Baseline forecasts, interpolation, scoring, and chart range |
 | `src/lesson-data.js` | Eight deterministic teaching scenarios |
 | `src/data/energy-data.js` | Selected and aggregated real energy records |

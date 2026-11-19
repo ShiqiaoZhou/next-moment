@@ -18,10 +18,11 @@ function captureStaticCopy(){
 }
 function applyStaticCopy(){
  document.documentElement.lang=locale==='en'?'en':'zh-CN';
- document.title=bi('Next Moment · Prediction Playground','下一刻 · 预测游乐场');
+ document.title=bi('Next Moment · Interval','下一刻 · 间距');
  for(const item of staticCopy){if(!item.node.isConnected)continue;if(item.attr)item.node.setAttribute(item.attr,tr(item.zh));else item.node.nodeValue=item.prefix+tr(item.zh)+item.suffix;}
+ document.querySelector('meta[name="description"]').content=document.querySelector('.hero-content p').textContent;
  document.querySelectorAll('[data-language]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.language===locale)));
- const back=document.querySelector('.back-to-vibe');if(back){back.hidden=location.protocol==='file:';back.textContent=bi('← Back to Vibe','← 返回 Vibe');}
+ const back=document.querySelector('.back-to-vibe');if(back){back.hidden=false;back.textContent=bi('← Project','← 项目介绍');}
 }
 function updateModelNames(){names.you=tr('你的直觉');names.persistence=tr('保持最后值');names.movingAverage=tr('6 小时均值');names.seasonal=tr('昨日同小时');}
 function renderDatasetInfo(){
